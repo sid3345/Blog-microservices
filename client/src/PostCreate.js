@@ -36,17 +36,13 @@ export default function PostCreate() {
         <Input value={title}
           onChange={e => setTitle(e.target.value)}
           className="form-control" />
-
-        <InputLabel> Content </InputLabel>
-        <Input value={content} onChange={e => setContent(e.target.value)}
-          className="form-control" />
-
       </div>
+
       <Button color="secondary"> Submit </Button>
       <br />
       <Button color="primary" onClick={() => history.push('/')}>Blogs</Button>
 
     </FormControl>
 
-  </div>)
+  </div >)
 }
