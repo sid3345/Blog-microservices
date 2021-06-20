@@ -2,38 +2,51 @@ import React, {
   useState
 } from 'react';
 import axios from 'axios';
+import { useHistory } from 'react-router-dom'
+import Button from '@material-ui/core/Button';
+import FormControl from '@material-ui/core/FormControl';
+import InputLabel from '@material-ui/core/InputLabel';
+import Input from '@material-ui/core/Input';
 
-export default () => {
+export default function PostCreate() {
+  const history = useHistory()
   const [title, setTitle] = useState('');
+  const [content, setContent] = useState('');
   const onSubmit = async (event) => {
     event.preventDefault();
     await axios.post('http://localhost:4000/posts', {
-      title
+      title,
+      content
     });
 
     setTitle('');
+    setContent('');
 
-    window.location.reload()
+    history.push('/')
 
   }
   return (<div>
-    <form onSubmit={
+
+    <FormControl onSubmit={
       onSubmit
     } >
 
       <div className="form-group" >
-        <label> Title </label> <
-          input value={
-            title
-          }
-          onChange={
-            e => setTitle(e.target.value)
-          }
+        <InputLabel> Title </InputLabel>
+        <Input value={title}
+          onChange={e => setTitle(e.target.value)}
           className="form-control" />
 
-      </div> <button className="btn btn-primary" > Submit </button>
+        <InputLabel> Content </InputLabel>
+        <Input value={content} onChange={e => setContent(e.target.value)}
+          className="form-control" />
 
-    </form>
+      </div>
+      <Button color="secondary"> Submit </Button>
+      <br />
+      <Button color="primary" onClick={() => history.push('/')}>Blogs</Button>
+
+    </FormControl>
 
   </div>)
 }

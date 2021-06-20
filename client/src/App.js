@@ -1,13 +1,16 @@
 import React from 'react';
 import PostCreate from './PostCreate'
 import PostList from './PostList'
+import { BrowserRouter as Router, Route, Switch } from "react-router-dom";
 
 export default () => {
-  return (<div className="container" >
-    <h1> Create Post </h1> <PostCreate />
-    <hr />
-    <h1> Posts </h1> <PostList />
-  </div>
 
+  return (
+    <Router>
+      <Switch>
+        <Route path="/blog/new" component={PostCreate} />
+        <Route path="/" component={PostList} />
+      </Switch>
+    </Router>
   );
 };
