@@ -27,7 +27,7 @@ export default function PostList() {
             {post.title}
           </Typography>
           <Typography variant="body2" component="p">
-            well meaning and kindly.
+            Content
           </Typography>
         </CardContent>
       </Card>
