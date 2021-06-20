@@ -20,7 +20,7 @@ export default ({postId}) => {
   return ( 
   <div>
       <form onSubmit = { onSubmit} >
-      < div className = "form-group" >
+      <div className = "form-group" >
 
       <label > NewComment </label>  <
       input value = {
@@ -30,6 +30,6 @@ export default ({postId}) => {
         e => setContent(e.target.value)
       }
       className = "form-control" / >
-      </div> < button className = "btn btn-primary g" > submit < /button> < / form >
+      </div> <button className = "btn btn-primary g" > submit </button> </form>
 
       </div> )};

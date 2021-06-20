@@ -46,5 +46,5 @@ app.post('/events',(req,res)=>{
   res.send({});
 });
 app.listen(4001, () => {
-  console.log('4001코멘트서버응답중');
+  console.log('4001 Comment server responding');
 });

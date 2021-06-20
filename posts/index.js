@@ -42,5 +42,5 @@ app.post('/events',(req,res)=>{
 
 
 app.listen(4000, () => {
-  console.log('4000포스트포트응답');
+  console.log('4000 post port response');
 });
